@@ -1,0 +1,48 @@
+
+h2{
+  text-align:center;
+}
+
+#game_cont{
+  text-align:center;
+  margin-top:3em;
+}
+
+#g_controls input{
+  width:40px;
+  text-align:center;
+}
+
+.row{
+  
+}
+
+.cc{
+  width: 2em;
+  height: 2em;
+  display: inline-block;
+  border: 1px solid #696969;
+  border-radius: 3px;
+  margin: 2px;
+  box-shadow: 1px 1px 3px 1px #B5B5B5;
+}
+
+.controls{
+  margin-top: 1em;
+  background: #E2DCDC;
+  padding: 0.5em;
+}
+
+.controls .cc{
+  cursor:pointer;
+}
+
+.c_0{ background-color: red; }
+.c_1{ background-color: green; }
+.c_2{ background-color: yellow; }
+.c_3{ background-color: blue; }
+.c_4{ background-color: orange; }
+.c_5{ background-color: purple; }
+.c_6{ background-color: black; }
+.c_7{ background-color: lime; }
+.c_8{ background-color: white; }

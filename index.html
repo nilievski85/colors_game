@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title>Colors game</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+ 	</head>
+<body>
+  <h2>Colors game</h2>
+  <div id="g_controls">
+    <button type="button" id="easy_game">Easy</button> <button type="button" id="normal_game">Normal</button> <button type="button" id="hard_game">Hard</button> <br>
+    <label>Size: </label><input type="number" value="5" size="2" name="width"/>x<input type="number" value="5" name="height"/>
+    <label>Number of colors: </label> <select name="colors_count"><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select>
+    <button type="button" id="new_game">New game</button>
+  </div>
+  <div id="game_cont"></div>
+</body>
+
+<script type="text/javascript" src="jquery-1.11.2.js"></script>
+<script type="text/javascript" src="colors_game.js"></script>
+
+<script type="text/javascript">
+
+CG = new ColorsGame({cont: $('#game_cont'), autobuild:1});
+
+var g_controls = $('#g_controls');
+
+$('#new_game').click(function(){ 
+  CG.build({
+    width:        g_controls.find('[name="width"]').val(), 
+    height:       g_controls.find('[name="height"]').val(),
+    colors_count: g_controls.find('[name="colors_count"]').val()
+  }); 
+});
+
+$('#easy_game').click(function(){ 
+  g_controls.find('[name="width"]').val(5);
+  g_controls.find('[name="height"]').val(5);
+  g_controls.find('[name="colors_count"]').val(5);
+  $('#new_game').click();
+});
+$('#normal_game').click(function(){ 
+  g_controls.find('[name="width"]').val(8);
+  g_controls.find('[name="height"]').val(8);
+  g_controls.find('[name="colors_count"]').val(7);
+  $('#new_game').click();
+});
+$('#hard_game').click(function(){
+  g_controls.find('[name="width"]').val(16);
+  g_controls.find('[name="height"]').val(16);
+  g_controls.find('[name="colors_count"]').val(9);
+  $('#new_game').click();
+});
+
+</script>
